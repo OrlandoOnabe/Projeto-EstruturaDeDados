@@ -1,6 +1,12 @@
 # Projeto-EstruturaDeDados
 Aplicativo para gerenciamento de serviços de saúde
 
+Projeto realizado por:
+
+Orlando Nagrockis Bertholdo RA: 23.223.003-5
+
+Morgana Rodrigues Zanetti RA: 24.223.010-0
+
 Operações:
 
   CADASTRO: Cadastrar novo paciente em uma lista dinâmica encadeada, mantendo a ordem de registro (inserção no início)
