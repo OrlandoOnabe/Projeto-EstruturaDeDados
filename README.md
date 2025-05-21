@@ -1,6 +1,5 @@
-# Estrutura-de-Dados (CC4652) - Projeto
-
-  ## Gerenciador de atendimento médico
+# Estrutura-de-Dados (CC4652) - Projeto  
+## Gerenciador de atendimento médico
 
 
 <p align="justify">
