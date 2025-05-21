@@ -221,7 +221,7 @@ void inserirArvoreIdade(ABB* arvore, Registro *dados){ //inserir paciente na arv
         pai = atual;
         if(dados->idade < atual->dados->idade){ //se a idade do novo vertice for menor que a do atual ele vai para o filho esquerdo
 			atual = atual->esq;
-		}else if(dados->idade > atual->dados->idade){ //senão vai para o filho direito
+		}else{ //senão vai para o filho direito
 			atual = atual->dir;
 		}
     }
@@ -247,7 +247,7 @@ void inserirArvoreDia(ABB* arvore, Registro *dados){ //inserir paciente na arvor
         pai = atual;
         if(dados->Entrada->dia < atual->dados->Entrada->dia){ //se o dia do novo vertice for menor que o do atual ele vai para o filho esquerdo
 			atual = atual->esq;
-		}else if(dados->Entrada->dia > atual->dados->Entrada->dia){ //senão vai para o filho direito
+		}else{ //senão vai para o filho direito
 			atual = atual->dir;
 		}
     }
@@ -273,7 +273,7 @@ void inserirArvoreMes(ABB* arvore, Registro *dados){ //inserir paciente na arvor
         pai = atual;
         if(dados->Entrada->mes < atual->dados->Entrada->mes){//se o mes do novo vertice for menor que o do atual ele vai para o filho esquerdo
 			atual = atual->esq;
-		}else if(dados->Entrada->mes > atual->dados->Entrada->mes){//senão vai para o filho direito
+		}else{//senão vai para o filho direito
 			atual = atual->dir;
 		}
     }
@@ -299,7 +299,7 @@ void inserirArvoreAno(ABB* arvore, Registro *dados){ //inserir paciente na arvor
         pai = atual;
         if(dados->Entrada->ano < atual->dados->Entrada->ano){//se o ano do novo vertice for menor que o do atual ele vai para o filho esquerdo
 			atual = atual->esq;
-		}else if(dados->Entrada->ano > atual->dados->Entrada->ano){//senão vai para o filho direito
+		}else{//senão vai para o filho direito
 			atual = atual->dir;
 		}
     }
@@ -400,9 +400,8 @@ void atualizarPaciente(LDE *lista){ //atualiza informaçoes de um paciente
     atual->dados->Nome[strcspn(atual->dados->Nome, "\n")] = '\0';
     printf("Nova idade: ");
     scanf("%d", &atual->dados->idade);
-    printf("Data do registro atualizado: ");
-    scanf("%d %d %d", &atual->dados->Entrada->dia, &atual->dados->Entrada->mes, &atual->dados->Entrada->ano);
     printf("Paciente atualizado com sucesso!\n");
+    
 }
 
 void removerPaciente(LDE *lista){ //remover um paciente da lista de pacientes
