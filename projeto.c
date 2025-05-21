@@ -133,7 +133,7 @@ void in_ordem_idade_EABB(EABB *raiz) { //percorre os vertices da arvores de form
         return;
     }
     in_ordem_idade_EABB(raiz->esq); //faz in_ordem do filho esquerdo
-    printf("Paciente: %s Idade: %d ", raiz->dados->Nome, raiz->dados->idade); //mostra nome e idade
+    printf("Paciente: %s Idade: %d\n", raiz->dados->Nome, raiz->dados->idade); //mostra nome e idade
     in_ordem_idade_EABB(raiz->dir);//faz in_ordem do filho direito
 }
 
@@ -142,7 +142,7 @@ void in_ordem_dia_EABB(EABB *raiz) { //percorre os vertices da arvores de forma 
         return;
     }
     in_ordem_dia_EABB(raiz->esq); //faz in_ordem do filho esquerdo
-    printf("Paciente: %s Dia: %d ", raiz->dados->Nome, raiz->dados->Entrada->dia); //mostra nome e dia
+    printf("Paciente: %s Dia: %d\n", raiz->dados->Nome, raiz->dados->Entrada->dia); //mostra nome e dia
     in_ordem_dia_EABB(raiz->dir);//faz in_ordem do filho direito
 }
 
@@ -151,7 +151,7 @@ void in_ordem_mes_EABB(EABB *raiz) { //percorre os vertices da arvores de forma 
         return;
     }
     in_ordem_mes_EABB(raiz->esq); //faz in_ordem do filho esquerdo
-    printf("Paciente: %s Mês: %d ", raiz->dados->Nome, raiz->dados->Entrada->mes); //mostra nome e mes
+    printf("Paciente: %s Mês: %d\n", raiz->dados->Nome, raiz->dados->Entrada->mes); //mostra nome e mes
     in_ordem_mes_EABB(raiz->dir); //faz in_ordem do filho direito
 }
 
@@ -160,7 +160,7 @@ void in_ordem_ano_EABB(EABB *raiz) { //percorre os vertices da arvores de forma 
         return;
     }
     in_ordem_ano_EABB(raiz->esq); //faz in_ordem do filho esquerdo
-    printf("Paciente: %s Ano: %d ", raiz->dados->Nome, raiz->dados->Entrada->ano); //mostra nome e ano
+    printf("Paciente: %s Ano: %d\n", raiz->dados->Nome, raiz->dados->Entrada->ano); //mostra nome e ano
     in_ordem_ano_EABB(raiz->dir); //faz in_ordem do filho direito
 }
 
@@ -593,7 +593,7 @@ void enfilerarPrioritario(heap *h, LDE *lista) { //enfileirar no heap de fila de
         return;
     }
     char enfilerarP[TAM]; //variavel para guardar o RG a ser procurado na lista
-    printf("RG do paciente a ser adicionado a fila de atendimento: ");
+    printf("RG do paciente a ser adicionado a fila de atendimento prioritário: ");
     clearBuffer();
     fgets(enfilerarP, sizeof(enfilerarP), stdin); //guarda o RG a ser enfileira na fila de prioridade
     enfilerarP[strcspn(enfilerarP, "\n")] = '\0';
@@ -618,7 +618,7 @@ void desenfilerarPrioritario(heap *h) { //desenfileirar no heap de fila de prior
         return;
     }
     char desenfilerarP[TAM]; //variavel para guardar o RG a ser procurado na lista
-    printf("RG do paciente a ser adicionado a fila de atendimento: ");
+    printf("RG do paciente a ser removido da fila de atendimento prioritário: ");
     clearBuffer();
     fgets(desenfilerarP, sizeof(desenfilerarP), stdin); //guarda o RG a ser desenfileirado
     desenfilerarP[strcspn(desenfilerarP, "\n")] = '\0';
@@ -697,7 +697,7 @@ void Salvar_paciente(LDE *lista){ //salvar pacientes em um arquivo binario
   printf("Pacientes salvos!\n");
 }
 
-void Carregar_paciente(LDE *lista){ //carrega os pacientes do arquivo binário para a lista
+void Carregar_paciente(LDE *lista, ABB *arvoreAno, ABB *arvoreMes, ABB *arvoreDia, ABB *arvoreIdade){ //carrega os pacientes do arquivo binário para a lista
   FILE *f = fopen("pacientes.bin", "rb"); //abre arquivo para leitura
   if (f == NULL){ //verifica se abriu
     printf("Erro ao abrir o arquivo de pacientes\n");
@@ -741,6 +741,10 @@ void Carregar_paciente(LDE *lista){ //carrega os pacientes do arquivo binário p
         atual->proximo = paciente; //insere a celula ao final da lista para manter a ordem de inserção
     }
     lista->qtd++;
+    inserirArvoreAno(arvoreAno, nova);
+    inserirArvoreMes(arvoreMes, nova);
+    inserirArvoreDia(arvoreDia, nova);
+    inserirArvoreIdade(arvoreIdade, nova);
   }
 
   if (fclose(f)){ //verifica se da erro ao fechar o arquivo
@@ -876,10 +880,10 @@ int main(void){
                     in_ordem_ano(arvoreAno);
                 }
                 else if(opcao == 2){
-                    in_ordem_mes(arvoreDia);
+                    in_ordem_dia(arvoreDia);
                 }
                 else if(opcao == 3){
-                    in_ordem_dia(arvoreMes);
+                    in_ordem_mes(arvoreMes);
                 }
                 else if(opcao == 4){
                     in_ordem_idade(arvoreIdade);
@@ -933,16 +937,17 @@ int main(void){
             Salvar_paciente(lista);
         }
         else if(opcao == 7){ //carrega pacientes
-            Carregar_paciente(lista);
+            Carregar_paciente(lista, arvoreAno, arvoreMes, arvoreDia, arvoreIdade);
         }
         else if(opcao == 8){ //desenvolvedores do projeto
             printf("Desenvolvedores do projeto:\n");
             printf("Orlando Nagrockis Bertholdo \tRA: 24.223.033-5\n");
             printf("Morgana Rodrigues Zanetti \tRA: 24.223.010-0\n");
-            printf("Informacoes adicionais:\n");
+            printf("Informações adicionais:\n");
             printf("Curso: \tCiencia da Computacao\n");
             printf("Disciplina: \tEstrutura de Dados\n");
             printf("Ciclo: \t4° Semestre\n");
+            printf("Data da apresentação do projeto: 21.05.2025\n");
         }
         else if(opcao == 0){ //sair do programa
             printf("Finalizando programa...\n");
