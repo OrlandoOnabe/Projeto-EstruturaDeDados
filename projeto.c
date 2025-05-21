@@ -730,6 +730,7 @@ void Carregar_paciente(LDE *lista, ABB *arvoreAno, ABB *arvoreMes, ABB *arvoreDi
     
     //faz uma inversão para que a mostragem da lista continue em ordem de inserção, e não na ordem em que ele lê do arquivo que estaria ao contrário
     Celula *paciente = criar_celula(nova); //cria a celula com os dados do paciente carregados
+    paciente->proximo = NULL;
     if (lista->primeiro == NULL) { //se a lista está vazia
         lista->primeiro = paciente; //a celula é o primeiro da lista
     } 
