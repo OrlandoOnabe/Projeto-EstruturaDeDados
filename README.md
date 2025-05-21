@@ -1,13 +1,38 @@
-# Projeto-EstruturaDeDados
+# Estrutura-de-Dados (CC4652) - Projeto
+
+  ## Gerenciador de atendimento médico
+
+
+<p align="justify">
+Este repositório serve como template para o desenvolvimento do projeto da disciplina de Estrutura-de-Dados (CC4652) do Centro Universitário FEI.
 Aplicativo para gerenciamento de serviços de saúde
 
-Projeto realizado por:
+**Projeto realizado por:**  
 
-Orlando Nagrockis Bertholdo RA: 23.223.003-5
+ - Orlando Nagrockis Bertholdo RA: 23.223.003-5  
+ - Morgana Rodrigues Zanetti RA: 24.223.010-0
 
-Morgana Rodrigues Zanetti RA: 24.223.010-0
+---
 
-Operações:
+**Introdução:**   
+O projeto visa simular um aplicativo para gerenciamento de serviços de saúde. A proposta tem como objetivo implementar os conhecimentos adquiridos ao longo das aulas.
+
+**Descrição do projeto:**   
+O programa conta com um menu principal contendo 8 opções, sendo elas:
+
+| Opção | Função |
+| --- | --- |
+| 0 | Encerrar |
+| 1 | Cadastrar | 
+| 2 | Atendimento |
+| 4 | Atendimento prioritário |
+| 4 | Pesquisa |
+| 5 | Desfazer |
+| 6 | Salvar |
+| 7 | Carregar |
+| 8 | Sobre |
+
+**Operações:**  
 
   CADASTRO: Cadastrar novo paciente em uma lista dinâmica encadeada, mantendo a ordem de registro (inserção no início)
   
@@ -78,3 +103,6 @@ Operações:
     
     - Data
 
+**Funcionamento:**  
+Ao iniciar o código, o menu principal será apresentado e o usuário poderá optar por uma das opções disponíveis dentro do programa. Caso o usuário insira uma opção inválida, o sistema retornará o menu e solicitará uma nova entrada até que uma opção válida seja fornecida. Dependendo da opção selecionada, um menu secundário será exibido, oferecendo outras funcionalidades para todo tipo de operação.
+</p>
