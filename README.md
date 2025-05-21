@@ -14,6 +14,22 @@ Operações:
     - Atualizar dados de paciente
     
     - Remover paciente
+
+   ATENDIMENTO: Inserir um paciente, que já possua cadastro, em uma fila para atendimento
+  
+    - Enfileirar paciente
+    
+    - Desenfileirar paciente
+    
+    - Mostrar fila
+
+  ATENDIMENTO PRIORITÁRIO: Inserir um paciente, que já possua cadastro, em uma fila para atendimento prioritário (considerar um heap de máximo pela idade), máximo de 20 atendimentos diários
+  
+    - Enfileirar paciente;
+    
+    - Desenfileirar paciente;
+    
+    - Mostrar fila.
     
   PESQUISA: Inserir um paciente, que já possua cadastro, em uma árvore binária de busca
   
@@ -24,30 +40,6 @@ Operações:
     - Mostrar registros ordenados por dia de registro
     
     - Mostrar registros ordenados por idade do paciente
-    
-  CARREGAR/SALVAR:
-  
-    - Ler um arquivo com os dados dos pacientes e carregar a lista
-    
-    - Salvar um arquivo com os dados dos pacientes
-    
-    - A ordem de inserção dos registros deve ser mantida
-    
-  ATENDIMENTO: Inserir um paciente, que já possua cadastro, em uma fila para atendimento
-  
-    - Enfileirar paciente
-    
-    - Desenfileirar paciente
-    
-    - Mostrar fila
-    
-  ATENDIMENTO PRIORITÁRIO: Inserir um paciente, que já possua cadastro, em uma fila para atendimento prioritário (considerar um heap de máximo pela idade), máximo de 20 atendimentos diários
-  
-    - Enfileirar paciente;
-    
-    - Desenfileirar paciente;
-    
-    - Mostrar fila.
 
   DESFAZER: Utilize uma pilha para armazenar as operações realizadas para a montagem da fila de atendimento
   
@@ -57,6 +49,17 @@ Operações:
     
     - Informe ao usuário a operação a ser desfeita e solicite confirmação
 
+    
+  SALVAR:
+    
+    - Salvar um arquivo com os dados dos pacientes
+    
+    - A ordem de inserção dos registros é mantida
+
+  CARREGAR:
+
+    - Ler um arquivo com os dados dos pacientes e carregar a lista
+    
   SOBRE: Mostrar os dados dos desenvolvedores
   
     - Nome do aluno;
